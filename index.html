@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>云上待办清单 · Cloud Todo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>云上待办清单</h1>
+      <p class="app__subtitle">轻量、离线可用的待办应用 · 数据保存在本地浏览器</p>
+    </header>
+
+    <form id="todo-form" class="composer" autocomplete="off">
+      <input
+        id="todo-input"
+        class="composer__input"
+        type="text"
+        placeholder="今天要做什么？（回车添加）"
+        maxlength="120"
+      />
+      <button class="composer__submit" type="submit">添加</button>
+    </form>
+
+    <section class="filters" id="filters">
+      <button class="filter is-active" data-filter="all">全部 <span id="count-all">0</span></button>
+      <button class="filter" data-filter="active">进行中 <span id="count-active">0</span></button>
+      <button class="filter" data-filter="done">已完成 <span id="count-done">0</span></button>
+    </section>
+
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <p id="empty-state" class="empty">还没有待办，先添加一件小事吧。</p>
+
+    <footer class="app__footer">
+      <button id="clear-done" class="ghost" type="button">清除已完成</button>
+      <span class="app__hint">数据仅保存在本机 localStorage</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
